@@ -1,0 +1,2 @@
+# Growtopia-Proxy
+Growtopia Proxy

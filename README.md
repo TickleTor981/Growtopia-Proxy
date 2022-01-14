@@ -6,8 +6,8 @@ Growtopia Proxy
 In this proxy you can use this commands
 Have auto captcha solver too.
 
-
-/menu (to see menu)
+```
+*/menu (to see menu)
 /fastdrop (drop items fast)
 /fasttrash (trash items fast)
 /bypassvault (Bypass safe vault)
@@ -37,8 +37,8 @@ Have auto captcha solver too.
 /server (Show server port,ip)
 /world (pull,kick,trade all in world)
 /vend (You can see all vend features on here)
-/wrenchmode (You can change wrench mode on here)
-
+/wrenchmode (You can change wrench mode on here)*
+```
 I'll update proxy , add some features in next time. 
 Build it on Release.
 Also if you get problem please contact me.

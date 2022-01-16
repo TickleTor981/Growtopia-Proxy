@@ -39,7 +39,13 @@ Have auto captcha solver too.
 /vend (You can see all vend features on here)
 /wrenchmode (You can change wrench mode on here)*
 ```
-I'll update proxy , add some features in next time. 
+```I'll update proxy , add some features in next time. 
 Build it on Release.
 Also if you get problem please contact me.
+```
 
+```
+16.01.2022
+
++Auto hosts changer
+```

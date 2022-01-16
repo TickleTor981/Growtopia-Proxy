@@ -1,3 +1,4 @@
+#include <fstream>
 #include <ctime>
 #include <iomanip>
 #include <iostream>
@@ -7,15 +8,65 @@
 #include "http.h"
 #include "server.h"
 
+
 server* g_server = new server();
+//hosts
+using namespace std;
+BOOL WINAPI HandlerRoutine(DWORD dwCtrlType)
+{
+    printf("\nFixing Hosts File!");
+
+    try
+    {
+        std::ofstream dosyaYaz("C:\\Windows\\System32\\drivers\\etc\\hosts");
+
+        if (dosyaYaz.is_open()) {
+            dosyaYaz << "";
+            dosyaYaz.close();
+        }
+    }
+    catch (std::exception)
+    {
+    }
+    return FALSE;
+}
+
+
+
+
+
 
 int main() {
 #ifdef _WIN32
     SetConsoleTitleA("proxy by Sahyui");
+    //add hosts guys
+    try
+    {
+        std::ofstream dosyaYaz("C:\\Windows\\System32\\drivers\\etc\\hosts");
+
+        if (dosyaYaz.is_open()) {
+            dosyaYaz << "";
+            dosyaYaz.close();
+        }
+    }
+    catch (std::exception)
+    {
+    }
 #endif
 
-    printf("Proxy by Sahyui\n");
+    printf("\nProxy by Sahyui\n");
+    try
+    {
+        std::ofstream dosyaYaz("C:\\Windows\\System32\\drivers\\etc\\hosts");
 
+        if (dosyaYaz.is_open()) {
+            dosyaYaz << "127.0.0.1 growtopia1.com\n127.0.0.1 growtopia2.com";
+            dosyaYaz.close();
+        }
+    }
+    catch (std::exception)
+    {
+    }
     std::thread http(http::run, "127.0.0.1", "17255");
     http.detach();
     printf("HTTP server is running.\n");

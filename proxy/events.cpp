@@ -439,6 +439,23 @@ bool events::out::generictext(std::string packet) {
             g_server->send(true, va, world.local.netid, -1);
             gt::send_log("`9Name Set To: " + name);
             return true;
+             } else if (find_command(chat, "dropwl ")) {
+            std::string cdropcount = chat.substr(8);
+            g_server->send(false, "action|drop\n|itemID|242");
+            g_server->send(false, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|" + cdropcount); // 242 is id of World Lock
+            gt::send_log("`9Dropped `c" + cdropcount + "`9 wl");
+            return true;
+              } else if (find_command(chat, "dropdl ")) {
+            std::string cdropcounts = chat.substr(8);
+            g_server->send(false, "action|drop\n|itemID|1796");
+            g_server->send(false, "action|dialog_return\ndialog_name|drop_item\nitemID|1796|\ncount|" + cdropcounts); // 1796 is id of World Lock
+            gt::send_log("`9Dropped `c" + cdropcounts + "`9 wl");
+            return true;
+            
+            
+            
+            
+            
         } /*else if (find_command(chat, "follow ")) {
             auto& players = g_server->m_world.players;
             for (auto& player : players) {
